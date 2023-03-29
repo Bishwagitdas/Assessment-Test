@@ -31,11 +31,11 @@
 				<th class="text-center">Action</th>
 			</tr>
 			@if(count($data) > 0)
-            <?php $i = 0 ?>
+            
 				@foreach($data as $row)
-                <?php $i++ ?>
+
 					<tr>
-                        <td class="text-center">{{ $i}}</td>
+                        <td class="text-center">{{ $row->id }}</td>
 						<td class="text-center">{{ $row->student_name }}</td>
 						<td class="text-center">{{ $row->student_email }}</td>
                         <td class="text-center"><img src="{{ asset('images/' . $row->student_image) }}" width="75" /></td>
@@ -71,6 +71,7 @@
 				</tr>
 			@endif
 		</table>
+        {!! $data->links() !!}
 	</div>
 </div>
 
